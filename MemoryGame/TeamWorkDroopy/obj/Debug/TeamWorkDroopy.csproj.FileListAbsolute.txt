@@ -1,6 +1,0 @@
-c:\users\simo\documents\visual studio 2013\Projects\TeamWorkDroopy\TeamWorkDroopy\bin\TeamWorkDroopy.dll.config
-c:\users\simo\documents\visual studio 2013\Projects\TeamWorkDroopy\TeamWorkDroopy\bin\TeamWorkDroopy.dll
-c:\users\simo\documents\visual studio 2013\Projects\TeamWorkDroopy\TeamWorkDroopy\bin\TeamWorkDroopy.pdb
-c:\users\simo\documents\visual studio 2013\Projects\TeamWorkDroopy\TeamWorkDroopy\obj\Debug\TeamWorkDroopy.csprojResolveAssemblyReference.cache
-c:\users\simo\documents\visual studio 2013\Projects\TeamWorkDroopy\TeamWorkDroopy\obj\Debug\TeamWorkDroopy.dll
-c:\users\simo\documents\visual studio 2013\Projects\TeamWorkDroopy\TeamWorkDroopy\obj\Debug\TeamWorkDroopy.pdb

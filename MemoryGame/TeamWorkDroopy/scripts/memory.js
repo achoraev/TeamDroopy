@@ -1,9 +1,10 @@
 ﻿var memoryArray = [
     'T', 'T', 'E', 'E', 'L', 'L', '3', '3', 'R', 'R', 'I', 'I', 'K', 'K',
-    'A', 'A', 'C', 'C', '1', '1', 'D', 'D', 'S', 'S'];
-var memoryValues = [];
-var memoryTileIds = [];
-var tilesFlipped = 0;
+    'A', 'A', 'C', 'C', '1', '1', 'D', 'D', 'S', 'S'],
+ memoryValues = [],
+ memoryTileIds = [],
+ tilesFlipped = 0;
+
 Array.prototype.memoryTileShuffle = function () {
     var i = this.length, j, temp;
     while (--i > 0) {
@@ -27,22 +28,22 @@ function newBoard() {
 }
 
 function memoryFlipTile(tile, val) {
-    if (tile.innerHTML == "" && memoryValues.length < 2) {
+    if (tile.innerHTML === "" && memoryValues.length < 2) {
         tile.style.background = 'rgba(255, 255, 255, 0.50)'; tile.innerHTML = val;
-        if (memoryValues.length == 0) {
+        if (memoryValues.length === 0) {
             memoryValues.push(val);
             memoryTileIds.push(tile.id);
-        } else if (memoryValues.length == 1) {
+        } else if (memoryValues.length === 1) {
             memoryValues.push(val);
             memoryTileIds.push(tile.id);
 
-            if (memoryValues[0] == memoryValues[1]) {
+            if (memoryValues[0] === memoryValues[1]) {
                 tilesFlipped += 2;
                 // Clear both arrays
                 memoryValues = [];
                 memoryTileIds = [];
                 // Check to see if the whole board is cleared
-                if (tilesFlipped == memoryArray.length) {
+                if (tilesFlipped === memoryArray.length) {
                     alert("Board cleared... generating new board");
                     document.getElementById('memory_board').innerHTML = "";
                     newBoard();
