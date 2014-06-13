@@ -71,6 +71,8 @@
     <Content Include="bower_components\raphael\license.txt" />
     <Content Include="bower_components\raphael\raphael-min.js" />
     <Content Include="bower_components\raphael\raphael.js" />
+    <Content Include="images\gray-background1.jpg" />
+    <Content Include="images\metal-background.jpg" />
     <Content Include="images\teleriklogo.png" />
     <Content Include="index.html" />
     <Content Include="memory-game.js" />
