@@ -68,8 +68,9 @@
     <Content Include="images\gray-background1.jpg" />
     <Content Include="images\teleriklogo.png" />
     <Content Include="MemoryGame.html" />
+    <Content Include="scripts\kinetic-v5.1.0.min.js" />
     <Content Include="scripts\memory.js" />
-    <Content Include="styles\style.css" />
+    <Content Include="scripts\raphael-min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -24,7 +24,7 @@ function newBoard() {
         output += '<div id="tile_' + i + '" onclick="memoryFlipTile(this,\'' + memoryArray[i] + '\')"></div>';
     }
 
-    document.getElementById('memory_board').innerHTML = output;
+    document.getElementById('memory-board').innerHTML = output;
 }
 
 function memoryFlipTile(tile, val) {
@@ -45,7 +45,7 @@ function memoryFlipTile(tile, val) {
                 // Check to see if the whole board is cleared
                 if (tilesFlipped === memoryArray.length) {
                     alert("Board cleared... generating new board");
-                    document.getElementById('memory_board').innerHTML = "";
+                    document.getElementById('memory-board').innerHTML = "";
                     newBoard();
                 }
             } else {
