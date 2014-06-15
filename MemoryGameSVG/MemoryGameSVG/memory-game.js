@@ -67,7 +67,8 @@ function reDraw(id) {
 
 function backToOriginal(id) {
     arr[id].attr({
-        fill: "url('/images/teleriklogo1.png')"
+        fill: "url('images/teleriklogo1.png')"
+		
     });
 }
 
@@ -82,7 +83,7 @@ function initialize() {
         for (var j = 0; j < 6; j++) {
             arr.push(paper.rect( -90 + counterX, -90 + conterY, 110, 110)
                  .attr({
-                     fill: "url('/images/teleriklogo1.png')",
+                     fill: "url('images/teleriklogo1.png')",
                      //stroke:"yellow",
                      //"stroke-width":4,
                      //"stroke-linejoin": 'round',
