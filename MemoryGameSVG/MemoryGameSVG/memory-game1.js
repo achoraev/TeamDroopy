@@ -1,10 +1,8 @@
-var memoryArray = [
+﻿var memoryArray = [
    'red', 'red', 'blue', 'blue', 'gray', 'gray', 'green', 'green', 'yellow', 'yellow', 'purple', 'purple', 'orange', 'orange',
    'pink', 'pink', 'greenyellow', 'greenyellow', 'darkblue', 'darkblue', 'brown', 'brown', 'cyan', 'cyan'];
 var redrawn = [];
 var arr = [];
-var logo = new Image();
-logo.src = "images/teleriklogo.png";
 
 Array.prototype.memoryTileShuffle = function () {
     var i = this.length,
@@ -71,19 +69,16 @@ function initialize() {
     for (i = 0; i < rows; i++) {
         counterX = 110;
         for (j = 0; j < cols; j++) {
-            arr.push(paper.rect(-90 + counterX, -90 + conterY, 110, 110)
+            arr.push(paper.rect(-90 + counterX, -90 + conterY, 105, 105)
                  .attr({
-                     fill: "url('/images/teleriklogo.png')",
-					 stroke:"yellow",
-					 "stroke-width":4
+                     fill: "url('/images/teleriklogo.png')"
                  })
                  .click(function () {
                      reDraw(this.id);
                  })
                  );
-            context.drawImage(logo,-90 +142+ counterX, -90 +30+ conterY);
-            counterX += 120;
+            counterX += 110;
         }
-        conterY += 120;
+        conterY += 110;
     }
 }
