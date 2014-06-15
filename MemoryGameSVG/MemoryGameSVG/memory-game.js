@@ -1,14 +1,10 @@
 ﻿var memoryArray = [
    'red', 'red', 'blue', 'blue', 'gray', 'gray', 'green', 'green', 'yellow', 'yellow', 'purple', 'purple', 'orange', 'orange',
-<<<<<<< HEAD
    'pink', 'pink', 'greenyellow', 'greenyellow', 'darkblue', 'darkblue', 'brown', 'brown', '#252525', '#252525'];
-=======
-   'pink', 'pink', 'greenyellow', 'greenyellow', 'darkblue', 'darkblue', 'brown', 'brown', 'cyan', 'cyan'];
 
->>>>>>> origin/master
-var redrawn = [];
-var arr = [];
-var posArr = [];
+var redrawn = [],
+    arr = [],
+    posArr = [];
 
 var logo = new Image();
 logo.src = "images/teleriklogo1.png";
@@ -27,9 +23,9 @@ Array.prototype.memoryTileShuffle = function () {
 
 function reDraw(id) {
     clickCount++;
-    if (clickCount > 2 && redrawn.length == 2) {
-        if (redrawn[0] != redrawn[1]) {
-            if (arr[redrawn[0]].attr("fill") == arr[redrawn[1]].attr("fill")) {
+    if (clickCount > 2 && redrawn.length === 2) {
+        if (redrawn[0] !== redrawn[1]) {
+            if (arr[redrawn[0]].attr("fill") === arr[redrawn[1]].attr("fill")) {
                 arr[redrawn[0]].click({
 
                 });
@@ -77,14 +73,15 @@ function initialize() {
        cols = 6,
        i,
        j;
-    for (var i = 0; i < 4; i++) {
-        var counterX = 120;
-        for (var j = 0; j < 6; j++) {
-            arr.push(paper.rect( -90 + counterX, -90 + conterY, 110, 110)
+
+    for (i = 0; i < rows; i++) {
+        counterX = 120;
+        for (j = 0; j < cols; j++) {
+            arr.push(paper.rect( -90 + counterX, -90 + conterY, 105, 105)
                  .attr({
                      fill: "url('/images/teleriklogo1.png')",
-                     //stroke:"yellow",
-                     //"stroke-width":4,
+                     stroke:"gray",
+                     "stroke-width":2,
                      //"stroke-linejoin": 'round',
 
                  })
@@ -97,9 +94,6 @@ function initialize() {
         }
         conterY += 120;
     }
-<<<<<<< HEAD
-}
-=======
 }
 
 function scaleDecr() {
@@ -126,5 +120,3 @@ function doTimer(funct) {
 function stopTimer() {
     clearInterval(timerID);
 }
-
->>>>>>> origin/master
