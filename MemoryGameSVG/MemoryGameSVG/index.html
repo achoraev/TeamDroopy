@@ -13,12 +13,12 @@
     <script src="memory-game.js"></script>
 	<canvas id="canvas" width="1000" height="600"></canvas>
     <script>
-        var canvas = document.getElementById("canvas");
-        var context = canvas.getContext("2d");
-        var paper = Raphael(150, 30, 800, 600);
-        var clickCount = 0;
-        var conterY = 110;
-        var indexCounter = 0;
+        var canvas = document.getElementById("canvas"),
+            context = canvas.getContext("2d"),
+            paper = Raphael(150, 30, 800, 600),
+            clickCount = 0,
+            conterY = 110,
+            indexCounter = 0;
 
         memoryArray.memoryTileShuffle();
         initialize();

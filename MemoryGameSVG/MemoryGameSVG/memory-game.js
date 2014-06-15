@@ -1,15 +1,19 @@
 ﻿var memoryArray = [
-   'red', 'red', 'blue', 'blue', 'gray', 'gray', 'green', 'green', 'yellow', 'yellow', 'purple', 'purple', 'orange', 'orange',
-   'pink', 'pink', 'greenyellow', 'greenyellow', 'darkblue', 'darkblue', 'brown', 'brown', '#252525', '#252525'];
+   '#FF3557', '#FF3557', '#388AFF', '#388AFF', '#606060', '#606060', '#4CFF00', '#4CFF00', '#FAFF02', '#FAFF02', '#FF54E8', '#FF54E8', '#FF7B00', '#FF7B00',
+   '#8605FF', '#8605FF', '#007F0E', '#007F0E', '#2014FF', '#2014FF', '#7F3300', '#7F3300', '#252525', '#252525'];
+
+//var memoryArray = [
+//   'red', 'red', 'blue', 'blue', 'gray', 'gray', 'green', 'green', 'yellow', 'yellow', 'purple', 'purple', 'orange', 'orange',
+//   'pink', 'pink', 'greenyellow', 'greenyellow', 'darkblue', 'darkblue', 'brown', 'brown', '#252525', '#252525'];
 
 var redrawn = [],
     arr = [],
     posArr = [];
 
 var logo = new Image();
-logo.src = "images/teleriklogo1.png";
+logo.src = "images/teleriklogo.png";
 var xOffset = 0,
-     xIncr = 0;
+    xIncr = 0;
 
 Array.prototype.memoryTileShuffle = function () {
     var i = this.length, j, temp;
@@ -35,8 +39,7 @@ function reDraw(id) {
                 //doTimer("scale_decr()");
                 redrawn = [];
                 clickCount = 1;
-            }
-            else {
+            } else {
                 for (var i = 0; i < redrawn.length; i++) {
                     backToOriginal(redrawn[i]);
                     doTimer("scaleDecr()");
@@ -44,11 +47,10 @@ function reDraw(id) {
                 redrawn = [];
                 clickCount = 1;
             }
-        }
-        else {
-            for (var i = 0; i < redrawn.length; i++) {
-                backToOriginal(redrawn[i]);
-                
+        } else {
+            for (var j = 0; j < redrawn.length; j++) {
+                backToOriginal(redrawn[j]);
+
             }
             redrawn = [];
             clickCount = 1;
@@ -63,8 +65,8 @@ function reDraw(id) {
 
 function backToOriginal(id) {
     arr[id].attr({
-        fill: "url('images/teleriklogo1.png')"
-		
+        fill: "url('images/teleriklogo.png')"
+
     });
 }
 
@@ -72,20 +74,19 @@ function initialize() {
     var counterX,
        rows = 4,
        cols = 6,
+       logoWidth = 110,
+       logoHeight = 105,
        i,
        j;
 
     for (i = 0; i < rows; i++) {
         counterX = 120;
         for (j = 0; j < cols; j++) {
-            arr.push(paper.rect( -90 + counterX, -90 + conterY, 105, 105)
+            arr.push(paper.rect(-90 + counterX, -90 + conterY, logoWidth, logoHeight)
                  .attr({
-                     fill: "url('/images/teleriklogo1.png')",
-                     stroke:"gray",
-                     "stroke-width":2,
-                     fill: "url('images/teleriklogo1.png')",
-                     stroke:"gray",
-                     "stroke-width":2
+                     fill: "url('images/teleriklogo.png')",
+                     stroke: "gray",
+                     "stroke-width": 2,                    
                      //"stroke-linejoin": 'round',
                  })
                  .click(function () {
@@ -103,16 +104,18 @@ function scaleDecr() {
     context.clearRect(0, 0, logo.width, logo.height);
     context.drawImage(logo, 10, 10, logo.width - xOffset, 100);
     xOffset = xOffset + 10;
-    if (xOffset >= logo.width)
+    if (xOffset >= logo.width) {
         stopTimer();
+    }
 }
 
 function scaleIncr() {
     context.clearRect(-10, -10, logo.width, logo.height);
     context.drawImage(logo, 10, 10, xOffset + xIncr, 100);
     xIncr = xIncr + 10;
-    if (xIncr >= logo.width)
+    if (xIncr >= logo.width) {
         stopTimer();
+    }
 }
 
 function doTimer(funct) {
