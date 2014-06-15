@@ -80,17 +80,13 @@ function initialize() {
         for (j = 0; j < cols; j++) {
             arr.push(paper.rect( -90 + counterX, -90 + conterY, 105, 105)
                  .attr({
-<<<<<<< HEAD
                      fill: "url('/images/teleriklogo1.png')",
                      stroke:"gray",
                      "stroke-width":2,
-=======
                      fill: "url('images/teleriklogo1.png')",
-                     //stroke:"yellow",
-                     //"stroke-width":4,
->>>>>>> origin/master
+                     stroke:"gray",
+                     "stroke-width":2
                      //"stroke-linejoin": 'round',
-
                  })
                  .click(function () {
                      reDraw(this.id);
