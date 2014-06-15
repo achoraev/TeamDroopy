@@ -15,7 +15,7 @@ logo.src = "images/teleriklogo.png";
 var xOffset = 0,
     xIncr = 0;
 
-Array.prototype.memoryTileShuffle = function () {
+Array.prototype.createMemoryBoard = function () {
     var i = this.length, j, temp;
     while (--i > 0) {
         j = Math.floor(Math.random() * (i + 1));
@@ -31,10 +31,8 @@ function reDraw(id) {
         if (redrawn[0] !== redrawn[1]) {
             if (arr[redrawn[0]].attr("fill") === arr[redrawn[1]].attr("fill")) {
                 arr[redrawn[0]].click({
-
                 });
                 arr[redrawn[1]].click({
-
                 });
                 //doTimer("scale_decr()");
                 redrawn = [];
@@ -42,7 +40,7 @@ function reDraw(id) {
             } else {
                 for (var i = 0; i < redrawn.length; i++) {
                     backToOriginal(redrawn[i]);
-                    doTimer("scaleDecr()");
+                    //doTimer("scaleDecr()");
                 }
                 redrawn = [];
                 clickCount = 1;
@@ -50,7 +48,6 @@ function reDraw(id) {
         } else {
             for (var j = 0; j < redrawn.length; j++) {
                 backToOriginal(redrawn[j]);
-
             }
             redrawn = [];
             clickCount = 1;
@@ -66,7 +63,6 @@ function reDraw(id) {
 function backToOriginal(id) {
     arr[id].attr({
         fill: "url('images/teleriklogo.png')"
-
     });
 }
 
@@ -86,7 +82,7 @@ function initialize() {
                  .attr({
                      fill: "url('images/teleriklogo.png')",
                      stroke: "gray",
-                     "stroke-width": 2,                    
+                     "stroke-width": 2,
                      //"stroke-linejoin": 'round',
                  })
                  .click(function () {
@@ -94,35 +90,35 @@ function initialize() {
                  })
             );
             context.drawImage(logo, -90 + 142 + counterX, -90 + 30 + conterY);
-            counterX += 120;
+            counterX += 110;
         }
-        conterY += 120;
+        conterY += 105;
     }
 }
 
-function scaleDecr() {
-    context.clearRect(0, 0, logo.width, logo.height);
-    context.drawImage(logo, 10, 10, logo.width - xOffset, 100);
-    xOffset = xOffset + 10;
-    if (xOffset >= logo.width) {
-        stopTimer();
-    }
-}
+//function scaleDecr() {
+//    context.clearRect(0, 0, logo.width, logo.height);
+//    context.drawImage(logo, 10, 10, logo.width - xOffset, 100);
+//    xOffset = xOffset + 10;
+//    if (xOffset >= logo.width) {
+//        stopTimer();
+//    }
+//}
 
-function scaleIncr() {
-    context.clearRect(-10, -10, logo.width, logo.height);
-    context.drawImage(logo, 10, 10, xOffset + xIncr, 100);
-    xIncr = xIncr + 10;
-    if (xIncr >= logo.width) {
-        stopTimer();
-    }
-}
+//function scaleIncr() {
+//    context.clearRect(-10, -10, logo.width, logo.height);
+//    context.drawImage(logo, 10, 10, xOffset + xIncr, 100);
+//    xIncr = xIncr + 10;
+//    if (xIncr >= logo.width) {
+//        stopTimer();
+//    }
+//}
 
-function doTimer(funct) {
-    x_pos = 0;
-    timerID = setInterval(funct, 50);
-}
+//function doTimer(funct) {   
+//    var x_pos = this;
+//    var timerID = setInterval(funct, 50);
+//}
 
-function stopTimer() {
-    clearInterval(timerID);
-}
+//function stopTimer() {
+//    clearInterval(timerID);
+//}
